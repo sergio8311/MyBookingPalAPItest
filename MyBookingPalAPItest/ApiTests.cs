@@ -1,14 +1,16 @@
 ﻿using System.IO;
 using System.Net;
 using System.Text;
+using System.Web.Script.Serialization;
 
 
 namespace MyBookingPalAPItest
 {
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using NUnit.Framework;
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     [TestFixture]
     public class ApiTests
@@ -21,36 +23,30 @@ namespace MyBookingPalAPItest
 
             request.Method = "GET";
             request.Accept = "application/json";
-
-
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             StringBuilder output = new StringBuilder();
             output.Append(reader.ReadToEnd());
-            string json = output.ToString();
-            var data = (JObject)JsonConvert.DeserializeObject(json);
-            
+            string json = @output.ToString();
+            //var data = (JObject)JsonConvert.DeserializeObject(json);
+            //JObject data = JObject.Parse(json);
+            //JArray quote = (JArray)data["quote"];
+            dynamic dict = JsonConvert.DeserializeObject(json);
+            var searchResponse = dict.search_response.search_quotes.quote[1].productname;
+            //var targetProductName = "Eiffel Balcony";
+            //var productName = Array.FindAll<dynamic>(searchResponse, s => s.Equals(targetProductName));
+            //string productName = searchResponse.productname;
+            //int productId = searchResponse.productid;
+
+
+
+
+            //Array is also possible
+            //string[] result = dict.Select(kv => kv.Value.ToString()).ToArray();
+
 
             response.Close();
         }
-
-        //[Test]
-        //public static T _download_serialized_json_data<T>(string url) where T : new()
-        //{
-        //    using (var w = new WebClient())
-        //    {
-        //        var json_data = string.Empty;
-        //        // attempt to download JSON data as a string
-        //        try
-        //        {
-        //            json_data = w.DownloadString("https://openexchangerates.org/api/latest.json?app_id=YOUR_APP_ID ");
-        //        }
-        //        catch (Exception) { }
-        //        // if string with JSON data is not empty, deserialize it to class and return its instance 
-        //        return !string.IsNullOrEmpty(json_data) ? JsonConvert.DeserializeObject<T>(json_data) : new T();
-        //    }
-        //    //var url = "https://openexchangerates.org/api/latest.json?app_id=YOUR_APP_ID ";
-        //    var currencyRates = _download_serialized_json_data<PorcuctData>(url);
-        //}
+     
     }
 }
