@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookingPalAPItest", "MyBookingPalAPItest\MyBookingPalAPItest.csproj", "{B6EA2451-A4FE-4430-B402-BFFA74F3AB19}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookingPalAPItestTests", "MyBookingPalAPItestTests\MyBookingPalAPItestTests.csproj", "{4DA711DD-991F-4A83-9EC8-1545090DB01B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{B6EA2451-A4FE-4430-B402-BFFA74F3AB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6EA2451-A4FE-4430-B402-BFFA74F3AB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6EA2451-A4FE-4430-B402-BFFA74F3AB19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DA711DD-991F-4A83-9EC8-1545090DB01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DA711DD-991F-4A83-9EC8-1545090DB01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DA711DD-991F-4A83-9EC8-1545090DB01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DA711DD-991F-4A83-9EC8-1545090DB01B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
